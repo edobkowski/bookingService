@@ -16,7 +16,7 @@ public class Guest {
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "phone_number")
-    private long phone;
+    private String phone;
     private String email;
     @OneToOne(mappedBy = "address")
     private Address address;
@@ -24,7 +24,7 @@ public class Guest {
     public Guest() {
     }
 
-    public Guest(String firstName, String lastName, long phone, String email, Address address) {
+    public Guest(String firstName, String lastName, String phone, String email, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -52,11 +52,11 @@ public class Guest {
         this.lastName = lastName;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
