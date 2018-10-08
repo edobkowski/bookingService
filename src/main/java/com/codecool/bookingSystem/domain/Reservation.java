@@ -41,6 +41,22 @@ public class Reservation {
         this.rooms = new ArrayList();
     }
 
+    public Reservation(List<Room> rooms, Guest guest, PaymentStatusType status, LocalDate arrivalDate,
+                       LocalDate departureDate, LocalTime arrivalTime, LocalTime departureTime, long numberOfGuests,
+                       boolean breakfast, String notes, double advancePayment) {
+        this.rooms = rooms;
+        this.guest = guest;
+        this.status = status;
+        this.arrivalDate = arrivalDate;
+        this.departureDate = departureDate;
+        this.arrivalTime = arrivalTime;
+        this.departureTime = departureTime;
+        this.numberOfGuests = numberOfGuests;
+        this.breakfast = breakfast;
+        this.notes = notes;
+        this.advancePayment = advancePayment;
+    }
+
     public long getId() {
         return id;
     }

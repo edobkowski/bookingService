@@ -21,6 +21,17 @@ public class Guest {
     @OneToOne(mappedBy = "address")
     private Address address;
 
+    public Guest() {
+    }
+
+    public Guest(String firstName, String lastName, long phone, String email, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    }
+
     public long getId() {
         return id;
     }
