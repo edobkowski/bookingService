@@ -1,8 +1,6 @@
 package com.codecool.bookingSystem.services;
 
-import com.codecool.bookingSystem.domain.Address;
 import com.codecool.bookingSystem.domain.Guest;
-import com.codecool.bookingSystem.repositories.AddressRepository;
 import com.codecool.bookingSystem.repositories.GuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
