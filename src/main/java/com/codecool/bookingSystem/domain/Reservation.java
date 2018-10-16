@@ -16,7 +16,7 @@ public class Reservation {
     @Column(name = "id")
     private long id;
 
-    @OneToMany
+    @ManyToMany
     private List<Room> rooms;
     @ManyToOne
     private Guest guest;
@@ -154,6 +154,28 @@ public class Reservation {
     }
 
     @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        this.rooms.forEach(room -> sb.append(room.toString()));
+        String roomsString = sb.toString();
+
+        return "Reservation{" +
+                "id: " + this.id + "\n" +
+                ", rooms: " + roomsString + "\n" +
+                ", guest: " + this.guest + "\n" +
+                ", status:" + this.status + "\n" +
+                ", arrivalDate=" + this.arrivalDate + "\n" +
+                ", departureDate=" + this.departureDate + "\n" +
+                ", arrivalTime=" + this.arrivalTime + "\n" +
+                ", departureTime=" + this.departureTime + "\n" +
+                ", numberOfGuests=" + this.numberOfGuests + "\n" +
+                ", breakfast=" + this.breakfast + "\n" +
+                ", notes='" + this.notes + "\n" +
+                ", advancePayment=" + this.advancePayment +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -174,7 +196,6 @@ public class Reservation {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id, rooms, guest, status, arrivalDate, departureDate, arrivalTime, departureTime, numberOfGuests, breakfast, notes, advancePayment);
     }
 }
